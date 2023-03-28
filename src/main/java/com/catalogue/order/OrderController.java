@@ -30,4 +30,10 @@ public class OrderController {
         log.info("request order by ID: {}", order_id);
         return new ResponseEntity<>(orderService.getOrderById(order_id), HttpStatus.OK);
     }
+
+    @PostMapping
+    public void setOrder(@RequestBody Order order){
+        log.info("set order : {}", order);
+        orderService.setOrder(order);
+    }
 }
